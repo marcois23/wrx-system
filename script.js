@@ -1,0 +1,50 @@
+// Toggle password visibility
+function togglePassword(fieldId) {
+  const field = document.getElementById(fieldId);
+  field.type = field.type === "password" ? "text" : "password";
+}
+
+// Handle signup
+document.addEventListener("DOMContentLoaded", () => {
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const userData = {
+        companyName: document.getElementById("companyName").value,
+        regNumber: document.getElementById("regNumber").value,
+        contactPerson: document.getElementById("contactPerson").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        password: document.getElementById("password").value,
+        plan: document.querySelector("input[name='plan']:checked").value
+      };
+
+      localStorage.setItem(userData.email, JSON.stringify(userData));
+      alert("Company registered successfully!");
+      window.location.href = "login.html";
+    });
+  }
+});
+
+// Handle login
+function login() {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  const storedUser = localStorage.getItem(email);
+
+  if (storedUser) {
+    const user = JSON.parse(storedUser);
+    if (user.password === password) {
+      alert("Login successful!");
+      window.location.href = "../dashboard/step1-sw-declaration.html";
+    } else {
+      alert("Incorrect password.");
+    }
+  } else {
+    alert("No user found with this email.");
+  }
+}

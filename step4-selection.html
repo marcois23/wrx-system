@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step 4: Contractor Selection</title>
+  <link rel="stylesheet" href="style4.css" />
+</head>
+<body>
+
+  <header>
+    <h2>WRX - Waste Resource Exchange</h2>
+    <div class="progress-bar">
+      <div class="step done">1. SW Declaration</div>
+      <div class="step done">2. Parameters</div>
+      <div class="step done">3. Analysis</div>
+      <div class="step active">4. Selection</div>
+      <div class="step">5. Report</div>
+    </div>
+  </header>
+
+  <main>
+    <h3>Select a Processing Contractor</h3>
+
+    <form id="contractorForm" class="contractor-grid">
+      <div class="contractor-card">
+        <h4>Kualiti Alam</h4>
+        <p>📍 Location: Malaysia</p>
+        <p>⭐ Rating: 4.5 / 5</p>
+        <input type="radio" name="contractor" value="Kualiti Alam" required /> Select
+      </div>
+
+      <div class="contractor-card">
+        <h4>Pentas Flora</h4>
+        <p>📍 Location: Malaysia</p>
+        <p>⭐ Rating: 4.5 / 5</p>
+        <input type="radio" name="contractor" value="Pentas Flora" required /> Select
+      </div>
+
+      <div class="contractor-card">
+        <h4>Amita Naza</h4>
+        <p>📍 Location: Malaysia</p>
+        <p>⭐ Rating: 4.5 / 5</p>
+        <input type="radio" name="contractor" value="Amita Naza" required /> Select
+      </div>
+    </form>
+
+    <button onclick="generateReport()">Generate Report</button>
+  </main>
+
+  <script src="script4.js"></script>
+</body>
+</html>

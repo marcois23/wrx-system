@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+
+header h2 {
+  background: #5b3cc4;
+  color: white;
+  padding: 15px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.steps button {
+  padding: 10px 15px;
+  border: none;
+  background: #ccc;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.steps button.active {
+  background: #16a34a;
+  color: white;
+  font-weight: bold;
+}
+
+form {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.checkbox {
+  text-align: left;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

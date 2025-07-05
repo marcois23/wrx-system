@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step 2: Parameters</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <header>
+    <h2>WRX - Waste Resource Exchange</h2>
+    <div class="steps">
+      <button>1. SW Declaration</button>
+      <button class="active">2. Parameters</button>
+      <button disabled>3. Analysis</button>
+      <button disabled>4. Selection</button>
+      <button disabled>5. Report</button>
+    </div>
+  </header>
+
+  <main>
+    <form id="paramForm">
+      <div class="form-group">
+        <label for="weight">Weight / Volume *</label>
+        <input type="number" id="weight" name="weight" placeholder="Enter value" required />
+        <select id="unit" required>
+          <option value="">Select unit</option>
+          <option value="kg">kg</option>
+          <option value="L">L</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="industry">Source of Industry *</label>
+        <input type="text" id="industry" name="industry" placeholder="e.g. Palm Oil Mill" required />
+      </div>
+
+      <div class="form-group">
+        <label for="certificate">Upload Certificate of Analysis *</label>
+        <input type="file" id="certificate" name="certificate" accept=".pdf,.jpg,.png,.jpeg" required />
+      </div>
+
+      <div class="form-group checkbox">
+        <input type="checkbox" id="confirm" />
+        <label for="confirm">I confirm that the information provided is accurate and complete.</label>
+      </div>
+
+      <button type="submit" id="nextBtn" disabled>Proceed to Analysis</button>
+    </form>
+  </main>
+
+  <script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h2 {
+    background: #5b3cc4;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .steps button {
+    padding: 10px 15px;
+    border: none;
+    background: #ccc;
+    color: #333;
+    border-radius: 5px;
+    cursor: default;
+  }
+  
+  .steps button.active {
+    background: #16a34a;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .company-info {
+    background: #e7f1ff;
+    padding: 15px;
+    margin: 0 auto 20px;
+    max-width: 600px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  
+  .waste-codes {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .code {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s ease;
+  }
+  
+  .code:hover {
+    border-color: #007bff;
+  }
+  
+  .code.selected {
+    border-color: #007bff;
+    background: #e0f0ff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

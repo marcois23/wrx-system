@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step 3: Analysis</title>
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+  <header>
+    <h2>WRX - Waste Resource Exchange</h2>
+    <div class="progress-bar">
+      <div class="step done">1. SW Declaration</div>
+      <div class="step done">2. Parameters</div>
+      <div class="step active">3. Analysis</div>
+      <div class="step">4. Selection</div>
+      <div class="step">5. Report</div>
+    </div>
+  </header>
+
+  <main>
+    <h3>Select Processing Method</h3>
+    <div class="methods">
+      <div class="method" onclick="selectMethod('1')">
+        <h4>Method 1</h4>
+        <ul>
+          <li>Processing Time: 3–5 days</li>
+          <li>Base Cost: RM 800 / tonne</li>
+          <li>Recovery Items: 2</li>
+        </ul>
+      </div>
+
+      <div class="method" onclick="selectMethod('2')">
+        <h4>Method 2</h4>
+        <ul>
+          <li>Processing Time: 4–6 days</li>
+          <li>Base Cost: RM 1,500 / tonne</li>
+          <li>Recovery Items: 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Detailed Analysis - Primary Treatment</h3>
+    <div class="analysis-grid">
+      <div class="column">
+        <h4>Cost Breakdown</h4>
+        <ul>
+          <li>Base Processing Cost: <span id="costBase">RM 0.00</span></li>
+          <li>Transport Cost: RM 500</li>
+          <li>Documentation Cost: RM 100</li>
+          <li class="total">Total Processing Cost: <strong id="costTotal">RM 0.00</strong></li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <h4>Recovery Output</h4>
+        <ul>
+          <li>Fuel Oil: <span id="recFuel">0t → RM 0.00</span></li>
+          <li>Diesel: <span id="recDiesel">0t → RM 0.00</span></li>
+          <li>Cement Fuel: <span id="recCement">0t → RM 0.00</span></li>
+          <li class="total">Total Recovery Value: <strong id="recTotal">RM 0.00</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Financial Summary</h3>
+    <div class="summary">
+      <p>Total Processing Cost: <strong id="sumCost">RM 0.00</strong></p>
+      <p>Total Recovery Value: <strong id="sumRecovery">RM 0.00</strong></p>
+      <p class="net">Net Result: <strong id="sumNet">RM 0.00</strong></p>
+    </div>
+
+    <button onclick="goToNext()">Proceed to Selection</button>
+  </main>
+
+  <script src="script3.js"></script>
+</body>
+</html>
