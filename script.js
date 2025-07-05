@@ -40,7 +40,7 @@ function login() {
     const user = JSON.parse(storedUser);
     if (user.password === password) {
       alert("Login successful!");
-      window.location.href = "../dashboard/step1-sw-declaration.html";
+      window.location.href = "step1-sw-declaration.html";
     } else {
       alert("Incorrect password.");
     }
