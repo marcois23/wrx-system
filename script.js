@@ -34,8 +34,5 @@ function login() {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-    }
-  } else {
-    alert("No user found with this email.");
-  }
+  window.location.href = "step1-sw-declaration.html";
 }
