@@ -31,10 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Handle login
 function login() {
+  // Optional: collect data if needed later
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-
-      window.location.href = "step1-sw-declaration.html";
-
+  // Just redirect to Step 1 page
+  window.location.href = "step1-sw-declaration.html";
 }
+
+
+
