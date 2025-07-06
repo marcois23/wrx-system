@@ -35,6 +35,6 @@ function login() {
   const password = document.getElementById("loginPassword").value;
 
 
-      window.location.href = "dashboard/step1-sw-declaration.html";
+      window.location.href = "../dashboard/step1-sw-declaration.html";
 
 }
