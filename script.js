@@ -34,15 +34,6 @@ function login() {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-  const storedUser = localStorage.getItem(email);
-
-  if (storedUser) {
-    const user = JSON.parse(storedUser);
-    if (user.password === password) {
-      alert("Login successful!");
-      window.location.href = "step1-sw-declaration.html";
-    } else {
-      alert("Incorrect password.");
     }
   } else {
     alert("No user found with this email.");
