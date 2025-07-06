@@ -34,5 +34,7 @@ function login() {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-  window.location.href = "step1-sw-declaration.html";
+
+      window.location.href = "../dashboard/step1-sw-declaration.html";
+
 }
