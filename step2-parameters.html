@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 2 - Parameters</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+  <header>
+    <h1>WRX - Waste Resource Exchange</h1>
+    <p>Hexagon Synergy (M) Sdn Bhd</p>
+  </header>
+
+  <div class="progress">
+    <div>1. SW Declaration</div>
+    <div class="active">2. Parameters</div>
+    <div>3. Analysis</div>
+    <div>4. Selection</div>
+    <div>5. Report</div>
+  </div>
+
+  <main>
+    <form id="paramForm">
+      <label>Weight/Volume:
+        <input type="number" id="weight" required />
+      </label>
+
+      <label>Unit:
+        <select id="unit" required>
+          <option value="kg">Kilograms (kg)</option>
+          <option value="L">Liters (L)</option>
+        </select>
+      </label>
+
+      <label>Source of Industry:
+        <input type="text" id="industry" required />
+      </label>
+
+      <label>Upload Certificate of Analysis:
+        <input type="file" id="certificate" accept=".pdf,.jpg,.png" />
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="confirmBox" />
+        I confirm that all information provided is accurate.
+      </label>
+
+      <button type="submit">Proceed to Analysis</button>
+    </form>
+  </main>
+
+  <script src="script2.js"></script>
+</body>
+</html>

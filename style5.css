@@ -1,0 +1,364 @@
+/* === General Layout === */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9fafb;
+  color: #1e293b;
+  text-align: center;
+}
+
+header {
+  background: #3c2aa8;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-around;
+  background: #e5e7eb;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.progress div {
+  padding: 8px 14px;
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.progress .active {
+  background: #3b82f6;
+  color: white;
+}
+
+.progress div:hover {
+  background: #cbd5e1;
+  cursor: pointer;
+}
+
+
+/* === MAIN CONTAINER === */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === REPORT TITLE === */
+.report-box h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* === SUMMARY CARDS === */
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.card {
+  flex: 1 1 22%;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background: #f9fafb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.card span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
+}
+
+.blue    { background: #e0edff; color: #1e40af; }
+.green   { background: #d1fae5; color: #065f46; }
+.yellow  { background: #fef3c7; color: #92400e; }
+.purple  { background: #ede9fe; color: #5b21b6; }
+
+/* === COMPANY INFO === */
+.company-info {
+  font-size: 14px;
+  background: #f1f5f9;
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* === ANALYSIS SECTION === */
+.analysis-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.analysis-section .left, .analysis-section .right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.analysis-section h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.analysis-section .left .card {
+  background: #f3f4f6;
+  padding: 15px 18px;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 12px;
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+}
+
+.analysis-section .left .card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+/* === ENVIRONMENTAL IMPACT === */
+.impact {
+  padding: 15px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.impact.green  { background: #d1fae5; color: #065f46; }
+.impact.blue   { background: #dbeafe; color: #1e3a8a; }
+.impact.purple { background: #ede9fe; color: #5b21b6; }
+
+/* === Carbon Credit Row === */
+.credit-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.credit-box, .certification-box {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  background: white;
+}
+
+/* Carbon Credit Box Styling */
+.credit-box {
+  border-left: 6px solid #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.credit-value {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.credit-market {
+  margin: 12px 0;
+  color: #065f46;
+  font-weight: 500;
+}
+
+.credit-revenue {
+  background: #d1fae5;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-top: 14px;
+}
+
+/* Certification Box Styling */
+.certification-box {
+  border-left: 6px solid #6366f1;
+  background: #f5f3ff;
+}
+
+.certification-box h4 {
+  margin-top: 0;
+  color: #4f46e5;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.certification {
+  padding-left: 20px;
+  list-style-type: none;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.certification li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.certification li.valid::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.certification li.pending::before {
+  content: "⚠️";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .credit-row {
+    flex-direction: column;
+  }
+}
+
+
+
+/* === FINANCIAL SECTION === */
+.financial {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.cost-box, .revenue-box {
+  flex: 1;
+  min-width: 320px;
+  background: #f9fafb;
+  padding: 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  border-left: 5px solid #cbd5e1;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.net-profit {
+  font-size: 18px;
+  font-weight: bold;
+  color: #047857;
+  margin-top: 12px;
+}
+
+/* === CONTRACTOR BOX === */
+.contractor-box {
+  background: #e0f2fe;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  border-left: 4px solid #0284c7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.contractor-box h3 {
+  margin-top: 0;
+  color: #0284c7;
+}
+
+.contractor-box p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* === ACTION BUTTONS === */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.actions button {
+  padding: 12px 26px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.actions button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.actions button:nth-child(1) { background: #3b82f6; color: white; }
+.actions button:nth-child(2) { background: #059669; color: white; }
+.actions button:nth-child(3) { background: #8b5cf6; color: white; }
+.actions button:nth-child(4) { background: #374151; color: white; }
+
+@media (max-width: 768px) {
+  .summary-cards, .financial, .analysis-section {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+}

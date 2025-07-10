@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to bottom right, rgba(0, 128, 128, 0.7), rgba(0, 0, 0, 0.6)),
+    url('images/background.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #signupForm {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      color: #1e293b;
+      animation: fadeIn 0.5s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #064e3b;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: rgba(255,255,255,0.5);
+      font-size: 14px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #10b981;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    label {
+      font-size: 14px;
+      display: block;
+      margin: 10px 0 4px;
+    }
+
+    h4 {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #047857;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .checkbox-label {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      color: #334155;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      margin-top: 24px;
+      background-color: #10b981;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+      color: #0f172a;
+    }
+
+    a {
+      color: #0ea5e9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      #signupForm {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form id="signupForm">
+    <h2>Company Registration</h2>
+
+    <input type="text" id="companyName" placeholder="Company Name *" required />
+    <input type="text" id="regNumber" placeholder="Registration Number *" required />
+    <input type="text" id="contactPerson" placeholder="Contact Person *" required />
+    <input type="email" id="email" placeholder="Email *" required />
+    <input type="text" id="phone" placeholder="Phone Number *" required />
+    <textarea id="address" placeholder="Company Address *" required></textarea>
+
+    <input type="password" id="password" placeholder="Create Password *" required />
+    <div class="checkbox-label">
+      <input type="checkbox" onclick="togglePassword('password')" />
+      Show Password
+    </div>
+
+    <h4>Choose Subscription Plan:</h4>
+    <label><input type="radio" name="plan" value="Monthly" checked> Monthly (RM 50)</label>
+    <label><input type="radio" name="plan" value="Annual"> Annual (RM 480)</label>
+
+    <button type="submit">Register Company</button>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Final Report</title>
+  <link rel="stylesheet" href="style5.css" />
+</head>
+<body>
+  <header>
+    <h1>WRX - Waste Resource Exchange</h1>
+    <p>Hexagon Synergy (M) Sdn Bhd</p>
+  </header>
+
+  <div class="progress">
+    <div>1. SW Declaration</div>
+    <div>2. Parameters</div>
+    <div>3. Analysis</div>
+    <div>4. Selection</div>
+    <div class="active">5. Report</div>
+  </div>
+
+  <main>
+    <section class="report-box">
+      <h2>📄 Waste Processing Analysis Report</h2>
+
+      <div class="summary-cards">
+        <div class="card blue" id="wasteTotal">10000 kg<br><span>Total Waste</span></div>
+        <div class="card green" id="wasteRecovered">5600 kg<br><span>Materials Recovered</span></div>
+        <div class="card yellow" id="costTotal">RM 8,600<br><span>Processing Cost</span></div>
+        <div class="card purple" id="valueTotal">RM 7,616<br><span>Material Revenue</span></div>
+      </div>
+
+      <div class="company-info">
+        <p><strong>Company:</strong> ABC Manufacturing
+           <strong>Registration No:</strong> 20091325678
+           <strong>SW Code:</strong> <span id="swCode">SW 311</span>
+           <strong>Subscription Plan:</strong> Annual (RM 480)
+           <strong>Processing Method:</strong> Method 1</p>
+      </div>
+
+      <div class="analysis-section">
+        <div class="left">
+          <h3>Recovery Products Analysis</h3>
+        <div class="card"><strong>Technology Used:</strong><br><span id="swTech"></span></div>
+        <div class="card"><strong>Green Product Output:</strong><br><span id="swProduct"></span></div>
+        <div class="card"><strong>Estimated Market Price:</strong><br><span id="swPrice"></span></div>
+        <div class="card"><strong>Minimum Feasible Quantity:</strong><br><span id="swMinQty"></span></div>
+        <div class="card"><strong>Technology Maturity:</strong><br><span id="swStatus"></span></div>
+        <div class="card"><strong>Technology Provider:</strong><br><span id="swProvider"></span></div>
+        <div class="card"><strong>Applications:</strong><br><span id="swUse"></span></div>
+        </div>
+
+        <div class="right">
+          <h3>Environmental Impact Analysis</h3>
+          <div class="impact green"><strong>24.65 tonnes CO₂</strong><br>Carbon Footprint Reduction</div>
+          <div class="impact blue"><strong>20.0 MWh</strong><br>Energy Recovery</div>
+          <div class="impact purple"><strong>5600 kg</strong><br>Resource Conservation</div>
+        </div>
+      </div>
+
+      <div class="credit-section">
+  <h3>🌱 Carbon Credit Potential</h3>
+  <div class="credit-row">
+    <div class="credit-box">
+      <p class="credit-value"><strong>24.65 Credits</strong></p>
+      <p>Based on verified CO₂ reduction calculations</p>
+      <p class="credit-market">Market Rate: <strong>RM 85 / tonne CO₂</strong></p>
+      <p class="credit-revenue">🌍 Potential Carbon Revenue:<br><strong>RM 2,095.25</strong></p>
+    </div>
+    
+    <div class="certification-box">
+      <h4>🔒 Certification Status</h4>
+      <ul class="certification">
+        <li class="valid"> Third-party verification completed</li>
+        <li class="valid"> Meets VCS (Verified Carbon Standard)</li>
+        <li class="pending"> Registration with Bursa Carbon Exchange (pending)</li>
+        <li class="pending"> Expected issuance: 30–45 days</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+      <div class="financial">
+        <div class="cost-box">
+          <h3>Financial Analysis - Processing Costs</h3>
+          <p>Collection & Transportation: RM 500</p>
+          <p>Processing Fee: RM 8000</p>
+          <p>Documentation & Reporting: RM 100</p>
+          <p><strong>Total Cost: RM 8,600</strong></p>
+        </div>
+        <div class="revenue-box">
+          <h3>Revenue Potential</h3>
+          <p>Recovered Materials: RM 7,616</p>
+          <p>Carbon Credits: RM 2,095.25</p>
+          <p><strong>Total Revenue: RM 9,711.25</strong></p>
+          <p class="net-profit">Net Profit: <strong>RM 1,111.25</strong></p>
+        </div>
+      </div>
+
+      <div class="contractor-box" id="contractorBox">
+  <h3>Selected Contractor</h3>
+  <p><strong id="contractorName">–</strong></p>
+  <p>Location: <span id="contractorLocation">–</span></p>
+  <p>Rating: <span id="contractorRating">–</span></p>
+      </div>
+
+      <div class="actions">
+        <button onclick="window.print()">Print Report</button>
+        <button>Download PDF</button>
+        <button onclick="window.location.href='step1-declaration.html'">+ New Analysis</button>
+        <button onclick="window.close()">Exit</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script5.js"></script>
+</body>
+</html>

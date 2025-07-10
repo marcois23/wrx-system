@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SW Declaration</title>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+
+  <header>
+    <h1>WRX - Waste Resource Exchange</h1>
+    <p>Hexagon Synergy (M) Sdn Bhd</p>
+  </header>
+
+  <div class="progress">
+    <div class="active">1. SW Declaration</div>
+    <div>2. Parameters</div>
+    <div>3. Analysis</div>
+    <div>4. Selection</div>
+    <div>5. Report</div>
+  </div>
+
+
+  <main>
+    <section class="company-info">
+      <strong>Company:</strong> ABC Manufacturing<br>
+      <strong>Contact:</strong> Haziq bin Akmal<br>
+      <strong>Plan:</strong> Annual (RM 480)
+    </section>
+
+    <section class="waste-codes">
+      <h3>Select Scheduled Waste Code</h3>
+
+      <div class="code-grid">
+        <div class="code" onclick="selectCode(this, 'SW 104 - Dross/Slag/Clinker/Ash')">SW 104<br><small>Dross/Slag/Clinker/Ash</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 305 - Spent Lubricating Oil')">SW 305<br><small>Spent Lubricating Oil</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 204 - Heavy Metal Sludges')">SW 204<br><small>Heavy Metal Sludges</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 311 - Waste Oil/Oily Sludge')">SW 311<br><small>Waste Oil/Oily Sludge</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 304 - Press cake from glycerol soap lye')">SW 304<br><small>Press cake from glycerol soap lye</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 306 - Spent hydraulic oil')">SW 306<br><small>Spent hydraulic oil</small></div>
+        <div class="code" onclick="selectCode(this, 'SW 307 - Spent mineral oil/water emulsion')">SW 307<br><small>Spent mineral oil/water emulsion</small></div>
+      </div>
+
+      <p id="selected-code">Selected SW Code: <em>None</em></p>
+      <button onclick="confirmSelection()">Confirm Selection</button>
+    </section>
+  </main>
+
+  <script src="script1.js"></script>
+</body>
+</html>
