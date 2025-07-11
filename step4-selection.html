@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <title>Step 4: Contractor Selection</title>
   <link rel="stylesheet" href="style4.css" />
-  <script defer src="scrip.js"></script>
+  <style>
+    /* Optional: Add extra styles if needed here */
+  </style>
 </head>
 <body>
   <header>
@@ -25,5 +27,86 @@
     <div class="contractors"></div>
     <button id="generateReportBtn">Generate Report</button>
   </main>
+
+  <!-- 💡 JS is now directly in the HTML -->
+  <script>
+    const contractorDataset = {
+      "Kualiti Alam": {
+        name: "Kualiti Alam",
+        location: "Malaysia",
+        rating: "4.5",
+        icon: "🏭"
+      },
+      "Pentas Flora": {
+        name: "Pentas Flora",
+        location: "Malaysia",
+        rating: "4.5",
+        icon: "♻️"
+      },
+      "Amita Naza": {
+        name: "Amita Naza",
+        location: "Malaysia",
+        rating: "4.5",
+        icon: "🧪"
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".contractors");
+
+      // Create contractor cards
+      Object.values(contractorDataset).forEach(c => {
+        const div = document.createElement("div");
+        div.className = "contractor";
+        div.dataset.name = c.name;
+
+        div.innerHTML = `
+          <div class="icon">${c.icon}</div>
+          <h3>${c.name}</h3>
+          <p>Location: ${c.location}</p>
+          <p>⭐️⭐️⭐️⭐️⭐️ ${c.rating}</p>
+        `;
+
+        container.appendChild(div);
+      });
+
+      let selectedContractor = null;
+
+      // Restore saved selection if any
+      const saved = JSON.parse(localStorage.getItem("selectedContractor"));
+      if (saved) {
+        selectedContractor = saved;
+        document.querySelectorAll(".contractor").forEach(el => {
+          if (el.dataset.name === saved.name) {
+            el.classList.add("selected");
+          }
+        });
+      }
+
+      // Handle selection
+      document.querySelectorAll(".contractor").forEach(el => {
+        el.addEventListener("click", function () {
+          document.querySelectorAll(".contractor").forEach(c => c.classList.remove("selected"));
+          this.classList.add("selected");
+
+          const name = this.dataset.name;
+          selectedContractor = contractorDataset[name];
+          localStorage.setItem("selectedContractor", JSON.stringify(selectedContractor));
+        });
+      });
+
+      // Handle report generation
+      document.getElementById("generateReportBtn").addEventListener("click", () => {
+        const selected = localStorage.getItem("selectedContractor");
+
+        if (!selected) {
+          alert("Please select a contractor before generating the report.");
+          return;
+        }
+
+        window.location.href = "step5-report.html";
+      });
+    });
+  </script>
 </body>
 </html>
