@@ -21,8 +21,13 @@ const contractorDataset = {
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".contractors");
+  let selectedContractor = null;
 
-  // Dynamically create contractor cards
+  // Load previous selection
+  const saved = JSON.parse(localStorage.getItem("selectedContractor"));
+  if (saved) selectedContractor = saved;
+
+  // Generate contractor cards
   Object.values(contractorDataset).forEach(c => {
     const div = document.createElement("div");
     div.className = "contractor";
@@ -35,44 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>⭐️⭐️⭐️⭐️⭐️ ${c.rating}</p>
     `;
 
+    // Restore previously selected contractor
+    if (saved && saved.name === c.name) {
+      div.classList.add("selected");
+    }
+
+    // Add click handler
+    div.addEventListener("click", () => {
+      document.querySelectorAll(".contractor").forEach(el => el.classList.remove("selected"));
+      div.classList.add("selected");
+      selectedContractor = contractorDataset[c.name];
+      localStorage.setItem("selectedContractor", JSON.stringify(selectedContractor));
+    });
+
     container.appendChild(div);
   });
 
-  let selectedContractor = null;
-
-  // Restore previous selection
-  const saved = JSON.parse(localStorage.getItem("selectedContractor"));
-  if (saved) {
-    selectedContractor = saved;
-    document.querySelectorAll(".contractor").forEach(el => {
-      if (el.dataset.name === saved.name) {
-        el.classList.add("selected");
-      }
-    });
-  }
-
-  // Selection logic
-  document.querySelectorAll(".contractor").forEach(el => {
-    el.addEventListener("click", function () {
-      document.querySelectorAll(".contractor").forEach(c => c.classList.remove("selected"));
-      this.classList.add("selected");
-
-      const name = this.dataset.name;
-      selectedContractor = contractorDataset[name];
-
-      localStorage.setItem("selectedContractor", JSON.stringify(selectedContractor));
-    });
-  });
-
-  // Button click → Go to report
-  document.getElementById("generateReportBtn").addEventListener("click", () => {
-    const selected = localStorage.getItem("selectedContractor");
-
-    if (!selected) {
+  // Handle button click
+  const reportBtn = document.getElementById("generateReportBtn");
+  reportBtn.addEventListener("click", () => {
+    if (!selectedContractor) {
       alert("Please select a contractor before generating the report.");
-      return;
+    } else {
+      window.location.href = "step5-report.html";
     }
-
-    window.location.href = "step5-report.html";
   });
 });
