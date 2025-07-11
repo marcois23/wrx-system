@@ -51,6 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Exit to Main Menu
   exitBtn.addEventListener("click", () => {
-    window.location.href = "../frontpage/index.html"; // Replace with your actual homepage
+    window.location.href = "index.html"; // Replace with your actual homepage
   });
 });
