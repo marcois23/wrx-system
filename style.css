@@ -1,17 +1,14 @@
-/* === BASIC RESET === */
+/* === RESET AND BASE === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === BODY WITH BACKGROUND IMAGE & GRADIENT === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
-  background-image: 
-    linear-gradient(to bottom right, rgba(0, 128, 128, 0.7), rgba(0, 0, 0, 0.6)),
-    url('images/background.jpg'); /* Replace with your actual image path */
+  background-image: linear-gradient(to bottom right, rgba(0, 128, 128, 0.7), rgba(0, 0, 0, 0.6));
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,70 +18,83 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* === PAGE TITLE === */
-h1 {
+/* === HEADER === */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #3c2aa8;
+  color: white;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* === TITLE === */
+h2 {
   font-size: 40px;
   margin-bottom: 40px;
-  position: relative;
-  z-index: 2;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   letter-spacing: 1px;
+  z-index: 1;
 }
 
-/* === GLASSMORPHIC CARD FOR BUTTONS === */
+/* === BUTTON GRID === */
 .button-group {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 30px 40px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  z-index: 1;
 }
 
-/* === BUTTON STYLES === */
-.button-group button {
-  padding: 14px 28px;
-  font-size: 16px;
-  font-weight: bold;
+/* === IMAGE BUTTON === */
+.img-button {
   border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  color: white;
+  background: none;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
 }
 
-.button-group button:hover {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+.img-button img {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-a {
-  text-decoration: none;
+.img-button img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-/* === RESPONSIVE DESIGN === */
+/* === RESPONSIVE === */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 26px;
-    text-align: center;
+  h2 {
+    font-size: 28px;
   }
 
   .button-group {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    grid-template-columns: 1fr;
   }
 
-  .button-group button {
-    width: 200px;
+  .img-button img {
+    width: 160px;
+    height: 160px;
   }
 }
