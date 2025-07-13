@@ -3,111 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <title>WRV Options</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      text-align: center;
+      box-sizing: border-box;
     }
 
     body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100vh;
-  background-image: 
-    linear-gradient(to bottom right, rgba(0, 128, 128, 0.7), rgba(0, 0, 0, 0.6)),
-    url('images/background.jpg'); /* Replace with your actual image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      background-image: 
+        linear-gradient(to bottom right, rgba(0, 128, 128, 0.7), rgba(0, 0, 0, 0.6));
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #f0f0f0;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-    body::before {
-      content: "";
+    header {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6); /* Overlay */
-      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #3c2aa8;
+      color: white;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
     }
 
     .container {
       z-index: 1;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(14px);
       padding: 40px 30px;
       border-radius: 16px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       max-width: 500px;
       width: 90%;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
       font-size: 28px;
-      color: #e0f2fe;
       margin-bottom: 30px;
+      color: #e0f2fe;
     }
 
-    .option-button {
-      display: block;
-      width: 100%;
-      margin: 12px 0;
-      padding: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      background: linear-gradient(to right, #3b82f6, #2563eb);
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      justify-items: center;
+    }
+
+    .img-button {
       border: none;
-      border-radius: 10px;
-      color: white;
+      background: none;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
     }
 
-    .option-button:hover {
-      background: linear-gradient(to right, #2563eb, #1e3a8a);
-      transform: translateY(-2px);
+    .img-button img {
+      width: 180px;
+      height: 180px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @media (max-width: 500px) {
-      .container {
-        padding: 30px 20px;
+    .img-button img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        grid-template-columns: 1fr;
+      }
+
+      .img-button img {
+        width: 140px;
+        height: 140px;
       }
 
       h2 {
         font-size: 22px;
       }
-
-      .option-button {
-        font-size: 16px;
-        padding: 12px;
-      }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>WRX - Waste Resource Exchange</h1>
+    <p>Hexagon Synergy (M) Sdn Bhd</p>
+  </header>
+
   <div class="container">
     <h2>Select WRV Option</h2>
-    <button class="option-button" onclick="goToLogin('port')">Port Reception Facilities</button>
-    <button class="option-button" onclick="goToLogin('vessel')">Vessel</button>
+    <div class="button-group">
+      <button class="img-button" onclick="goToLogin('port')">
+        <img src="6.jpg" alt="Port Reception" />
+      </button>
+      <button class="img-button" onclick="goToLogin('vessel')">
+        <img src="5.jpg" alt="Vessel" />
+      </button>
+    </div>
   </div>
 
   <script>
     function goToLogin(type) {
       localStorage.setItem("wrvType", type);
-      window.location.href = "login.html"; // Adjust if needed
+      window.location.href = "login.html";
     }
   </script>
 </body>
